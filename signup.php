@@ -71,10 +71,21 @@ integrity=
 "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"> 
   <link rel="stylesheet" href="src/btn_styles.css" />
+  <link rel="stylesheet" href="src/top_nav.css" />
+  <link rel="stylesheet" href="src/footer.css">
 </head> 
 
 <body> 
 
+  <div class="topNav">
+    <a href="#" class="slipt"><img src="https://template.viserlab.com/casinous/demo/assets/images/logo.png"
+        alt="" /></a>
+    <div class="right">
+      <a href="./index.php">Home</a>
+      <a href="about.php">About</a>
+      <a href="#Games">Games</a>
+    </div>
+  </div>
 <?php
 
 if ($showAlert) {
@@ -118,7 +129,7 @@ data-dismiss="alert" aria-label="Close">
 
 ?> 
 
-<div class="container my-4 col-4  d-flex flex-column justify-content-center   "> 
+<div class="container mt-5 my-4 col-4  d-flex flex-column justify-content-center   "> 
       <h1 class="text-center">Sign up</h1> 
       <form action="signup.php"  method="post" > 
         <div class="form-group"> 
@@ -144,6 +155,25 @@ data-dismiss="alert" aria-label="Close">
       </form> 
 </div> 
 
+  <footer>
+    <div class="cont_">
+
+      <div class="cont">
+        <a href="#" class="slipt"><img src="https://template.viserlab.com/casinous/demo/assets/images/logo.png"
+            alt="" /></a>
+        <div class="right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions </a>
+          <a href="#Games">Games</a>
+        </div>
+      </div>
+      <div class="copy">
+        <a> Copyrights &copf; All Rights Reserved </a>
+      </div>
+
+    </div>
+
+  </footer>
 <!-- Optional JavaScript --> 
 <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 

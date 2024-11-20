@@ -20,7 +20,7 @@
       <a href="about.php">About</a>
       <a href="#Games">Games</a>
     </div>
-    </div>
+  </div>
 
   <div class="sign_up ">
     <div class="content blur_effect ">
