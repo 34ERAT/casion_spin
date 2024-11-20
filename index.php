@@ -30,8 +30,8 @@
         PLATFORM.
       </p>
       <div>
-        <a class="btn_link">Play Now</a>
-        <a href="./signup.php" class="btn_link">Sign Up</a>
+        <a  href="./signin.php" class="btn_ btn_link">Play Now</a>
+        <a href="./signup.php" class=" btn_ btn_link">Sign Up</a>
       </div>
     </div>
     <div>

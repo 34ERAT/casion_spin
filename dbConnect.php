@@ -7,9 +7,6 @@ $database = "Gamble_users";
 //create connection
 $conn = mysqli_connect($serve_name, $username, $password, $database);
 // $connection = mysqli_connect('hostname', 'username', 'password', 'database');kk
-if ($conn) {
-    echo "success";
-} else {
+if (!$conn) {
     die("Error".mysqli_connect_error());
-    echo "success";
 }

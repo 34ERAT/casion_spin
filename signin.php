@@ -12,43 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $cpassword = $_POST["cpassword"];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
 
-
-    $sql = "Select * from Users where email='$email'";
+    $sql = "Select * from Users where email='$email' and password ='$hash'";
 
     $result = mysqli_query($conn, $sql);
 
     $num = mysqli_num_rows($result);
 
-    // This sql query is use to check if
-    // the username is already present
-    // or not in our Database
-    if ($num == 0) {
-        if (($password == $cpassword) && $exists == false) {
-
-            $hash = password_hash(
-                $password,
-                PASSWORD_DEFAULT
-            );
-
-            // Password Hashing is used here.
-            $sql = "INSERT INTO `Users` ( `email`, 
-`password`, `date`) VALUES ('$email', 
-'$hash', current_timestamp())";
-
-            $result = mysqli_query($conn, $sql);
-
-            if ($result) {
-                $showAlert = true;
-            }
-        } else {
-            $showError = "Passwords do not match";
-        }
-    }// end if
-
+    // if ($result) {
+    //     $showAlert = true;
+    // }
     if ($num > 0) {
-        $exists = "Username not available";
+        $exists = "you have success fully log in";
+    } else {
+        $showError = "Wrong password or email";
     }
 
 }//end if
@@ -120,7 +98,7 @@ data-dismiss="alert" aria-label="Close">
 
 <div class="container my-4 col-4  d-flex flex-column justify-content-center   "> 
       <h1 class="text-center">Sign up</h1> 
-      <form action="signup.php"  method="post" > 
+      <form action="signin.php"  method="post" > 
         <div class="form-group"> 
           <label for="email">Username</label> 
           <input type="email" class="form-control" id="username" name="email" aria-describedby="emailHelp">	 
@@ -130,16 +108,8 @@ data-dismiss="alert" aria-label="Close">
           <input type="password" class="form-control"
             id="password" name="password"> 
         </div> 
-        <div class="form-group"> 
-          <label for="cpassword">Confirm Password</label> 
-          <input type="password" class="form-control" id="cpassword" name="cpassword"> 
-
-          <small id="emailHelp" class="form-text text-muted"> 
-            Make sure to type the same password 
-          </small> 
-        </div>	 
         <button type="submit" class="btn btn_action"> 
-          Sign Up 
+          Sign In
         </button> 
       </form> 
 </div> 
