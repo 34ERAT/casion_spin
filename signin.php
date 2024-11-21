@@ -1,6 +1,5 @@
 <?php
 
-$showAlert = false;
 $showError = false;
 $exists = false;
 
@@ -12,21 +11,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    // $hash =
 
-    $sql = "Select * from Users where email='$email' and password ='$hash'";
+    $sql = "Select * from Users where email='$email'";
 
     $result = mysqli_query($conn, $sql);
 
     $num = mysqli_num_rows($result);
+    if ($result && $num > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $hash = $row['password'];
+        if (password_verify($password, $hash)) {
 
-    // if ($result) {
-    //     $showAlert = true;
-    // }
-    if ($num > 0) {
-        $exists = "you have success fully log in";
+            header("location:./sping_wheel.php");
+            die();
+        } else {
+            $showError = "Wrong password or email error  ";
+        }
+
+
     } else {
-        $showError = "Wrong password or email";
+        $showError = "Wrong password or email error  ";
     }
 
 }//end if
@@ -66,23 +71,9 @@ integrity=
 
 <?php
 
-if ($showAlert) {
-
-    echo ' <div class="alert alert-success 
-alert-dismissible fade show" role="alert"> 
-
-<strong>Success!</strong> Your account is 
-now created and you can login. 
-<button type="button" class="close"
-data-dismiss="alert" aria-label="Close"> 
-<span aria-hidden="true">×</span> 
-</button> 
-</div> ';
-}
-
 if ($showError) {
 
-    echo ' <div class="alert alert-danger 
+    echo ' <div class=" mt-5 alert alert-danger 
       alert-dismissible fade show" role="alert"> 
       <strong>Error!</strong> '. $showError.'
 
@@ -94,7 +85,7 @@ data-dismiss="alert aria-label="Close">
 }
 
 if ($exists) {
-    echo ' <div class="alert alert-danger 
+    echo ' <div class="mt-5 alert alert-danger 
 alert-dismissible fade show" role="alert"> 
 
 <strong>Error!</strong> '. $exists.'

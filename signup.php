@@ -93,22 +93,6 @@ integrity=
   </div>
 <?php
 
-   /* if ($showAlert) {
-
-        echo ' <div class="mt-5 alert alert-success
-alert-dismissible fade show" role="alert">
-
-<strong>Success!</strong> Your account is
-now created and you can login. you will be redirected in a few seconds
-<button type="button" class="close"
-data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">×</span>
-</button>
-    </div> ';
-        header("location:./sping_wheel.php");
-        die();
-    }
-    */
 if ($showError) {
 
     echo ' <div class="mt-5 alert alert-danger 
