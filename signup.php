@@ -50,6 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($num > 0) {
         $exists = "Username not available";
     }
+    if ($showAlert) {
+        header("location:./sping_wheel.php");
+        die();
+        # code...
+    }
 
 }//end if
 
@@ -88,23 +93,25 @@ integrity=
   </div>
 <?php
 
-if ($showAlert) {
+   /* if ($showAlert) {
 
-    echo ' <div class="alert alert-success 
-alert-dismissible fade show" role="alert"> 
+        echo ' <div class="mt-5 alert alert-success
+alert-dismissible fade show" role="alert">
 
-<strong>Success!</strong> Your account is 
-now created and you can login. 
+<strong>Success!</strong> Your account is
+now created and you can login. you will be redirected in a few seconds
 <button type="button" class="close"
-data-dismiss="alert" aria-label="Close"> 
-<span aria-hidden="true">×</span> 
-</button> 
-</div> ';
-}
-
+data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+    </div> ';
+        header("location:./sping_wheel.php");
+        die();
+    }
+    */
 if ($showError) {
 
-    echo ' <div class="alert alert-danger 
+    echo ' <div class="mt-5 alert alert-danger 
       alert-dismissible fade show" role="alert"> 
       <strong>Error!</strong> '. $showError.'
 
@@ -116,7 +123,7 @@ data-dismiss="alert aria-label="Close">
 }
 
 if ($exists) {
-    echo ' <div class="alert alert-danger 
+    echo ' <div class="mt-5 alert alert-danger 
 alert-dismissible fade show" role="alert"> 
 
 <strong>Error!</strong> '. $exists.'
@@ -129,12 +136,13 @@ data-dismiss="alert" aria-label="Close">
 
 ?> 
 
-<div class="container mt-5 my-4 col-4  d-flex flex-column justify-content-center   "> 
+    <div class="container mt-5 my-4 col-4  
+      d-flex flex-column justify-content-center   "> 
       <h1 class="text-center">Sign up</h1> 
       <form action="signup.php"  method="post" > 
         <div class="form-group"> 
           <label for="email">Username</label> 
-          <input type="email" class="form-control" id="username" name="email" aria-describedby="emailHelp">	 
+            <input type="email" class="form-control" id="username" name="email" aria-describedby="emailHelp">	 
         </div> 
         <div class="form-group"> 
           <label for="password">Password</label> 
