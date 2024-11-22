@@ -10,7 +10,11 @@ body {
   place-items: center;
   margin: 0;
   height: 100vh;
-  background-color: rgba(47, 2, 31, 23);
+  /* background-color: rgba(47, 2, 31, 23); */
+  background: url("https://template.viserlab.com/casinous/demo/assets/images/top/bg.png");
+  background-position: center;
+  background-size: cover;
+  align-content: center;
 }
 
 .mainbody {
@@ -25,13 +29,12 @@ body {
 }
 
 .main {
-  /* background: Green; */
   margin: 20px;
   display: flex;
   border-radius: 1rem;
   justify-content: space-between;
   /* transition: background-color 0.3s ease, transform 0.3s ease; */
-  /*   animation: bounceIn 2s ease; */
+  animation: bounceIn 2s ease;
 }
 
 
@@ -50,7 +53,7 @@ body {
   font-family: Arial, sans-serif;
   transition: transform 0.3s ease, background 0.5s ease;
   /* transition: background-color 0.3s ease, transform 0.3s ease; */
-  animation: bounceIn 2s ease;
+  animation: bounceInLeft 2s ease;
 }
 
 /* Hover Effect */
@@ -133,6 +136,25 @@ body {
   border: 1px solid #ffcc00;
 }
 
+@keyframes bounceInLeft {
+
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(50px);
+  }
+
+  60% {
+    transform: translateX(10px);
+  }
+}
+
 @keyframes bounceIn {
 
   0%,
@@ -144,7 +166,7 @@ body {
   }
 
   40% {
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
 
   60% {

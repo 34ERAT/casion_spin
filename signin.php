@@ -115,7 +115,7 @@ data-dismiss="alert" aria-label="Close">
       </form> 
 </div> 
 
-  <footer class="mt-5" >
+  <footer   style="margin-top:110px;">
     <div class="cont_">
 
       <div class="cont">
