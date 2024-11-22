@@ -15,10 +15,12 @@ body {
   display: flex;
   overflow: hidden;
   width: 100%;
+
 }
 
 .sign_up {
   margin-top: 50px;
+  animation: bounceIn 2s ease;
 }
 
 .sign_up div,
@@ -40,6 +42,7 @@ body {
   font-weight: 800;
   font-size: 65px;
   margin-bottom: 3rem;
+  animation: fadeInDown 1.2s ease;
 }
 
 .content span {
@@ -52,6 +55,8 @@ body {
   letter-spacing: 3px;
   font-size: 22px;
   margin-bottom: 1rem;
+  animation: fadeInUp 1.3s ease-in-out;
+  ;
 }
 
 .content div {
@@ -67,6 +72,7 @@ body {
   margin-left: 30px;
   font-family: "Open san", "sans-serif", "Lucida Sans Regular";
   font-size: 30px;
+  animation: bounceIn 2s ease;
 }
 
 .sign_up {
@@ -243,4 +249,78 @@ h3 {
 
 .why_us .right>p {
   padding: 2px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide_in {
+
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translatex(0);
+  }
+
+  40% {
+    transform: translatex(-20px);
+  }
+
+  60% {
+    transform: translatex(-10px);
+  }
+
+}
+
+@keyframes bounceIn {
+
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
 }

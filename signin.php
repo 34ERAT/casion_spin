@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $showError = "Wrong password or email error  ";
         }
 
-
     } else {
         $showError = "Wrong password or email error  ";
     }
